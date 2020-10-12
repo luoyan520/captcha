@@ -121,7 +121,7 @@ class Captcha
         $code = mb_strtolower($code, 'UTF-8');
 
         // 若不相等则匹配失败
-        if (!$key == $code) return false;
+        if (!($key == $code)) return false;
 
         // 清空缓存，防止再次重放攻击
         Cache::delete('captcha_' . $captcha_id);
