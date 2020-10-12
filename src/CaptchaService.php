@@ -1,0 +1,16 @@
+<?php
+
+namespace think\captcha;
+
+use think\Route;
+use think\Service;
+
+class CaptchaService extends Service
+{
+    public function boot()
+    {
+        $this->registerRoutes(function (Route $route) {
+            $route->get('captcha/[:config]', "\\think\\captcha\\CaptchaController@index");
+        });
+    }
+}
