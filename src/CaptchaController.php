@@ -15,6 +15,6 @@ class CaptchaController
 {
     public function index(Captcha $captcha, $config = null)
     {
-        return $captcha->create($config);
+        return json($captcha->create($config));
     }
 }
