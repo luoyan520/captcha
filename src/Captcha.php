@@ -130,7 +130,7 @@ class Captcha
     }
 
     /**
-     * 输出验证码并把验证码的值保存的session中
+     * 输出验证码
      * @access public
      * @param null|string $config
      * @return Response
@@ -205,7 +205,7 @@ class Captcha
         // 将图片base64编码
         $pic = 'data:image/png;base64,' . base64_encode($content);
 
-        return ret(0, '生成验证码图片成功', ['captcha_id' => $generator['id'], 'captcha_pic' => $pic]);
+        return ['code' => 0, 'msg' => '生成验证码图片成功', 'captcha_id' => $generator['id'], 'captcha_pic' => $pic];
     }
 
     /**
